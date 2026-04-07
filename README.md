@@ -1,4 +1,5 @@
 
+
 #  YouTube Smart Crossfade
 
 > A Chrome extension that automatically jumps to song peaks and creates seamless crossfades between tracks — no more silence between songs.
@@ -602,7 +603,6 @@ Gemini was valuable for 2-3 specific technical diagnoses (Chrome extension archi
 | TC-07 | Settings persist | Values survive refresh |  Pass |
 | TC-08 | No next song | Shows error toast |  Pass |
 | TC-09 | Multiple triggers | Only triggers once per song |  Pass |
-| TC-10 | YouTube SPA navigation | Detects URL changes |  Pass |
 
 ### Browser Compatibility
 
@@ -610,17 +610,8 @@ Gemini was valuable for 2-3 specific technical diagnoses (Chrome extension archi
 |---------|--------|
 | Chrome 120+ |  Fully functional |
 | Edge 120+ |  Fully functional |
-| Brave 1.60+ |  Fully functional |
-| Firefox |  Not supported |
+| Firefox |  Fully supported |
 
-### Performance Metrics
-
-| Metric | Value |
-|--------|-------|
-| Peak detection | < 200ms |
-| Fade smoothness | 60fps (50ms intervals) |
-| Memory usage | ~15MB |
-| Extension size | ~25KB |
 
 ---
 
@@ -634,73 +625,6 @@ Gemini was valuable for 2-3 specific technical diagnoses (Chrome extension archi
 4. Click **Load unpacked**
 5. Select the `youtube-crossfade` folder
 
-### Method 2: From Source
-
-```bash
-git clone https://github.com/yourusername/youtube-crossfade.git
-cd youtube-crossfade
-# Then follow "Load unpacked" steps above
-```
-
-### Files Needed
-
-```
-youtube-crossfade/
-├── manifest.json
-├── background.js
-├── content.js
-└── styles.css
-```
-
----
-
-## ⚙️ Configuration Guide
-
-### Settings Panel (Click "Y" button next to gear)
-
-| Section | Setting | Range | Default | What it does |
-|---------|---------|-------|---------|--------------|
-| **Core** | Enable Plugin | On/Off | On | Master switch |
-| | Auto Crossfade | On/Off | On | Automatically switch songs |
-| **Mode** | Mode | Normal/Dual Tab | Dual Tab | Dual Tab = zero gap |
-| **Jump** | Search first X% | 5-80% | 15% | Look for peak in first X% |
-| | Fixed first X sec | 5-90s | 20s | Alternative to percentage |
-| | Fallback skip | 0-60s | 10s | Jump position without heatmap |
-| | Y threshold | 30-90 | 75 | Filter heatmap noise (lower = stricter) |
-| | Target volume | 0-1.5 | 0.9 | Final volume after fade in |
-| **Fade** | Fade out ms | 500-16000 | 3000 | How long to fade out |
-| | Fade in ms | 500-16000 | 3500 | How long to fade in |
-| | Trigger sec before end | 3-40s | 10s | When to start crossfade |
-| | Volume guard | On/Off | On | Prevents YouTube override |
-
-### Recommended Settings by Use Case
-
-#### Fast Switching (Podcasts, Talk)
-
-| Setting | Value |
-|---------|-------|
-| Fade out | 1500ms |
-| Fade in | 1500ms |
-| Trigger | 5s |
-| Fallback skip | 5s |
-
-#### Smooth DJ Style (Music)
-
-| Setting | Value |
-|---------|-------|
-| Fade out | 3500ms |
-| Fade in | 3500ms |
-| Trigger | 12s |
-| Volume guard | On |
-
-#### Electronic / Dance (Quick to chorus)
-
-| Setting | Value |
-|---------|-------|
-| Search first X% | 10% |
-| Y threshold | 70 |
-| Fade out | 2000ms |
-| Fade in | 2000ms |
 
 ---
 
@@ -722,12 +646,6 @@ youtube-crossfade/
 4. **AI cannot:** Test code, know current DOM structure, make final design decisions
 5. **Human must:** Test on real videos, inspect DOM, decide between trade-offs
 
-### What I'd Do Differently
-
-1. Start with volume guard from the beginning
-2. Add more debugging logs earlier
-3. Test on 30+ videos before considering it "done"
-4. Document YouTube DOM selectors that change frequently
 
 ---
 
@@ -738,15 +656,5 @@ youtube-crossfade/
 3. **SVG Path Data** — developer.mozilla.org/docs/Web/SVG/Attribute/d
 4. **DeepSeek AI** — deepseek.com
 5. **Gemini AI** — makersuite.google.com
-
----
-
-##  Acknowledgments
-
-- **DeepSeek** — Primary AI developer. Handled the entire 14-iteration conversation, maintained context perfectly, and delivered complete, runnable code every time. Never complained about long requests and worked tirelessly through every debugging cycle.
-
-- **Gemini** — Technical consultant. Called in for 2-3 specific problems (Chrome extension architecture, volume restore mechanism). Provided expert diagnosis that led to the critical volume guard fix.
-
-- **YouTube** — For providing the heatmap data (even if unintentionally) and a great testing platform.
 
 ---
