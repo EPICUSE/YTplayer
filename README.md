@@ -414,13 +414,6 @@ Step 3: I test on real YouTube videos
          └─── If stuck ──→ Consult Gemini → Bring solution back to DeepSeek
 ```
 
-### What Each "Team Member" Cannot Do
-
-| Role | Cannot Do |
-|------|------------|
-| **DeepSeek** | Test code in real browser, know YouTube's current DOM, feel what "smooth" sounds like |
-| **Gemini** | Maintain long conversation context, generate complete runnable code reliably |
-| **Me (Human)** | Write code faster than AI, remember all Chrome API details, stay awake for 14 iterations without fatigue |
 
 ### The Perfect Partnership
 
