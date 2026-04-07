@@ -604,14 +604,6 @@ Gemini was valuable for 2-3 specific technical diagnoses (Chrome extension archi
 | TC-08 | No next song | Shows error toast |  Pass |
 | TC-09 | Multiple triggers | Only triggers once per song |  Pass |
 
-### Browser Compatibility
-
-| Browser | Status |
-|---------|--------|
-| Chrome 120+ |  Fully functional |
-| Edge 120+ |  Fully functional |
-| Firefox |  Fully supported |
-
 
 ---
 
