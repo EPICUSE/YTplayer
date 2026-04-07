@@ -461,17 +461,6 @@ DeepSeek (Primary) ────────────────────�
 
 **Gemini** was called in as a specialist consultant for 2-3 specific problems (volume guard mechanism, Chrome extension architecture) because it has better knowledge of the latest Chrome extension APIs.
 
-### Interaction Timeline
-
-| Phase | Duration | DeepSeek Role | Gemini Role |
-|-------|----------|---------------|-------------|
-| Requirements | Week 1 | Generated initial structure | - |
-| Design | Week 2 | Architecture planning | Confirmed Chrome API approach |
-| Implementation | Week 3 | Core crossfade logic | - |
-| Debugging (Volume) | Week 4 | Implemented fixes | Diagnosed YouTube override issue |
-| Debugging (Autoplay) | Week 4 | Added fallback handlers | - |
-| Optimization | Week 5 | Y-threshold, dual-tab | - |
-| Documentation | Week 6 | Generated this README | - |
 
 ### Prompt Log (Selected Examples)
 
@@ -480,24 +469,28 @@ DeepSeek (Primary) ────────────────────�
 #### Prompt #1: Initial Concept
 
 ```
-{INSERT SCREENSHOT: Conversation showing initial prompt about Chrome extension for YouTube crossfade}
+<img width="803" height="241" alt="image" src="https://github.com/user-attachments/assets/4560e43c-6bbe-45a3-a2a0-a89a060856c0" />
 ```
+<img width="770" height="1039" alt="image" src="https://github.com/user-attachments/assets/6a0ebba0-cad9-4fbe-adde-6c4b5d842fba" />
 
-*My prompt asking DeepSeek to build the basic extension structure.*
+*My prompt asking Gemini to build the basic extension structure.*
 
-**Response:** DeepSeek provided manifest.json, content script skeleton, and heatmap parsing approach.
+**Response:** Gemini provided JavaScript, But it not work well on Tampermonkey. so I pass this code to Deepseek and let it buil again.
 
-**Refinement:** I asked to focus on finding the FIRST peak within 20%, not global maximum.
+*Deepseek give me a real plugin*
+<img width="839" height="875" alt="image" src="https://github.com/user-attachments/assets/e902fc3a-46d8-40ff-8a0f-e73710e7d035" />
+
 
 ---
 
 #### Prompt #2: Dual-Tab Crossfade
 
 ```
-{INSERT SCREENSHOT: Conversation about solving audio gap with dual tabs}
+<img width="777" height="795" alt="image" src="https://github.com/user-attachments/assets/d3c20117-8003-4df9-9aec-03c98a3ea31d" />
 ```
 
 *Discussion about opening next song in new tab before current ends.*
+<img width="808" height="532" alt="image" src="https://github.com/user-attachments/assets/e31b8303-008d-4e46-a332-ddc546aa4678" />
 
 **Solution:** DeepSeek designed background.js as central coordinator with `chrome.tabs.create()` and messaging API.
 
@@ -506,12 +499,15 @@ DeepSeek (Primary) ────────────────────�
 #### Prompt #3: Volume Problem (Critical)
 
 ```
-{INSERT SCREENSHOT: Conversation about new tab being too quiet}
+<img width="220" height="214" alt="image" src="https://github.com/user-attachments/assets/e7a01e4d-2823-4e25-a619-164fbf90a90e" />
 ```
 
 *This was the hardest bug. New tab audio was sometimes silent or very quiet.*
 
-**Diagnosis:** DeepSeek initially tried several fixes. When stuck, I consulted Gemini, which identified YouTube's volume restoration mechanism.
+**Diagnosis:** DeepSeek initially tried several fixes. but Deepseek do so much time, still not work, When stuck, I consulted Gemini, which identified YouTube's volume restoration mechanism.
+<img width="789" height="967" alt="image" src="https://github.com/user-attachments/assets/ebf3ae8f-8dbc-4e94-a95f-226461632f6b" />
+**I pass gemini output to Deepseek:.
+<img width="820" height="725" alt="image" src="https://github.com/user-attachments/assets/7a56e2b2-b790-498c-8034-a238f460c2cb" />
 
 **Final Fix:** DeepSeek implemented the "volume guard" using `Math.max(video.volume, targetAtProgress)`.
 
@@ -520,7 +516,7 @@ DeepSeek (Primary) ────────────────────�
 #### Prompt #4: Heatmap Accuracy
 
 ```
-{INSERT SCREENSHOT: Conversation about heatmap jumping to wrong position}
+<img width="801" height="664" alt="image" src="https://github.com/user-attachments/assets/59892f08-cb5f-4826-9b69-f2f4e45a8f2f" />
 ```
 
 *The parser was picking tiny noise bumps instead of real chorus peaks.*
@@ -529,15 +525,6 @@ DeepSeek (Primary) ────────────────────�
 
 ---
 
-#### Prompt #5: Complete Settings UI
-
-```
-{INSERT SCREENSHOT: Request for full settings panel}
-```
-
-*DeepSeek generated complete HTML/CSS with 12 sliders, switches, and localStorage persistence.*
-
----
 
 ### AI Strengths & Limitations
 
