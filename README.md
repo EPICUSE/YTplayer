@@ -348,25 +348,7 @@ function getNextUrl() {
 }
 ```
 
----
 
-####  Manifest.json
-
-```json
-{
-  "manifest_version": 3,
-  "name": "YouTube Smart Crossfade",
-  "version": "12.0",
-  "permissions": ["storage", "tabs", "scripting"],
-  "host_permissions": ["https://www.youtube.com/*"],
-  "background": { "service_worker": "background.js" },
-  "content_scripts": [{
-    "matches": ["https://www.youtube.com/watch*"],
-    "js": ["content.js"],
-    "css": ["styles.css"]
-  }]
-}
-```
 
 ---
 
