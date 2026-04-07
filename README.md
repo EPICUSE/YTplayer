@@ -454,7 +454,7 @@ DeepSeek (Primary) ────────────────────�
                                    │
                                    │ - Analyzes technical issues
                                    │ - Knows latest Chrome APIs
-                                   │ - Provides diagnosis
+
 ```
 
 **DeepSeek** was the primary worker — extremely diligent, handles massive context windows, and delivers complete, runnable code every time. It never refused a request and worked through 10+ debugging cycles patiently.
