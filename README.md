@@ -693,3 +693,13 @@ youtube-crossfade/
 5. **Gemini AI** — makersuite.google.com
 
 ---
+
+##  Acknowledgments
+
+- **DeepSeek** — Primary AI developer. Handled the entire 14-iteration conversation, maintained context perfectly, and delivered complete, runnable code every time. Never complained about long requests and worked tirelessly through every debugging cycle.
+
+- **Gemini** — Technical consultant. Called in for 2-3 specific problems (Chrome extension architecture, volume restore mechanism). Provided expert diagnosis that led to the critical volume guard fix.
+
+- **YouTube** — For providing the heatmap data (even if unintentionally) and a great testing platform.
+
+---
