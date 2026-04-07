@@ -352,15 +352,127 @@ function getNextUrl() {
 
 ---
 
-##  AI Collaboration Process
 
-### AI Tools Used
+## AI Collaboration Process
 
-| Tool | Role | Strengths |
-|------|------|-----------|
-| **DeepSeek** | Primary developer | Long context, complete code execution, tireless iteration |
-| **Gemini** | Consultant (when needed) | Latest API knowledge, Chrome extension expertise |
+### Roles & Responsibilities
 
+| Role | Tool / Person | Responsibilities | Strengths |
+|------|---------------|------------------|-----------|
+| **Primary Developer** | DeepSeek | Code generation, implementation, debugging, iteration | Long context, complete code execution, tireless iteration, never loses track |
+| **Technical Consultant** | Gemini | Architecture validation, solving stuck problems, API expertise | Latest API knowledge, Chrome extension expertise, diagnostic thinking |
+| **Product Owner & Integrator** | Me (Human) | Creative direction, design decisions, testing, feedback, final integration | Understanding real user needs, testing on actual YouTube videos, making trade-offs, knowing when to switch between AI tools |
+
+### Why Three "Team Members"?
+
+This project used a **human-in-the-loop multi-AI workflow**:
+
+```
+                    ┌─────────────────────────────────────────────────────────┐
+                    │                    HUMAN (Me)                           │
+                    │  - Creative vision: "jump to first peak, not global max"│
+                    │  - Design decisions: dual-tab vs normal mode            │
+                    │  - Testing: 20+ real YouTube videos                     │
+                    │  - Quality control: when to accept/reject AI output     │
+                    │  - Tool orchestration: when to call DeepSeek vs Gemini  │
+                    └─────────────────────────┬───────────────────────────────┘
+                                              │
+                    ┌─────────────────────────┼───────────────────────────────┐
+                    │                         │                               │
+                    ▼                         ▼                               ▼
+          ┌─────────────────┐       ┌─────────────────┐       ┌─────────────────┐
+          │    DeepSeek     │       │     Gemini      │       │     Human       │
+          │   (Primary)     │       │  (Consultant)   │       │  (Integrator)   │
+          ├─────────────────┤       ├─────────────────┤       ├─────────────────┤
+          │ • Writes code   │       │ • Analyzes      │       │ • Provides      │
+          │ • 14 iterations │       │   root cause    │       │   requirements  │
+          │ • Full context  │       │ • Suggests      │       │ • Tests on real │
+          │ • Complete      │       │   architecture  │       │   YouTube       │
+          │   solutions     │       │ • Latest API    │       │ • Gives         │
+          │                 │       │   knowledge     │       │   feedback      │
+          └─────────────────┘       └─────────────────┘       └─────────────────┘
+```
+
+### My Role: Human-in-the-Loop
+
+As the human developer, I provided what neither AI could:
+
+| Contribution | Example |
+|--------------|---------|
+| **Creative Vision** | "Find the FIRST peak within 20%, not the global maximum" — this was my insight after testing on 10+ songs |
+| **Design Decisions** | Choosing dual-tab mode over prefetch + play in background because of browser autoplay policies |
+| **Real-World Testing** | Playing 20+ YouTube videos, noticing when the jump was off, when volume was wrong |
+| **Quality Control** | Rejecting AI outputs that "looked right" but failed in real testing |
+| **Tool Orchestration** | Knowing when DeepSeek was stuck → switching to Gemini for diagnosis → back to DeepSeek for implementation |
+| **Debugging Direction** | "The new tab has no sound" → I tested, observed, and directed the fix toward volume guard |
+| **Trade-off Decisions** | Y-threshold = 75 (not 50, not 90) — found through manual testing, not AI |
+| **Edge Case Discovery** | "What if there's no heatmap?" "What if autoplay is blocked?" — I anticipated these |
+
+### The Human's Critical Value
+
+> "AI can write the code, but only a human knows what 'good' feels like."
+
+**Examples where human judgment was essential:**
+
+1. **Peak selection logic:** AI initially picked the global maximum (often 60-70% into song). I wanted the first significant peak (15-20%) for faster gratification. AI executed my vision.
+
+2. **Volume guard threshold:** AI suggested 0.5 as minimum volume. I tested and found 0.1 was too quiet, 0.3 still quiet — settled on 0.8-0.9 through experimentation.
+
+3. **Y-axis threshold (75):** AI didn't know what value works. I tested Y=50 (too strict, missed peaks), Y=90 (too loose, caught noise), Y=75 (sweet spot).
+
+4. **When to use Gemini:** I recognized when DeepSeek was cycling through similar solutions without progress — that's when I brought in Gemini for fresh perspective.
+
+### Interaction Workflow
+
+```
+Step 1: I define the requirement
+   │
+   ▼
+Step 2: DeepSeek generates complete code
+   │
+   ▼
+Step 3: I test on real YouTube videos
+   │
+   ├─── If works ──→ Move to next feature
+   │
+   └─── If fails ──→ I diagnose (console logs, DOM inspection)
+         │
+         ├─── If clear fix ──→ I direct DeepSeek
+         │
+         └─── If stuck ──→ Consult Gemini → Bring solution back to DeepSeek
+```
+
+### What Each "Team Member" Cannot Do
+
+| Role | Cannot Do |
+|------|------------|
+| **DeepSeek** | Test code in real browser, know YouTube's current DOM, feel what "smooth" sounds like |
+| **Gemini** | Maintain long conversation context, generate complete runnable code reliably |
+| **Me (Human)** | Write code faster than AI, remember all Chrome API details, stay awake for 14 iterations without fatigue |
+
+### The Perfect Partnership
+
+| Strength | Provided By |
+|----------|-------------|
+| Speed | AI |
+| Scale (14 iterations) | AI |
+| Code completeness | DeepSeek |
+| Technical diagnosis | Gemini |
+| Creative direction | Human |
+| Real-world testing | Human |
+| Quality judgment | Human |
+| Tool switching | Human |
+
+### My Reflection
+
+> "DeepSeek did the heavy lifting. Gemini provided the insights when we were stuck. But I was the conductor — deciding what to build, when to accept, when to reject, and when to call in the consultant. Neither AI knew what a 'good' crossfade sounded like. That was my job."
+
+**Score for each collaborator:**
+- DeepSeek: 9/10 (workhorse)
+- Gemini: 7/10 (consultant, used sparingly)
+- Me (Human): Essential (without me, no direction, no testing, no quality control)
+
+---
 ### Why Two AI Tools?
 
 This project used a **dual-AI workflow**:
