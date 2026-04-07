@@ -1,3 +1,4 @@
+
 #  YouTube Smart Crossfade
 
 > A Chrome extension that automatically jumps to song peaks and creates seamless crossfades between tracks — no more silence between songs.
@@ -468,9 +469,9 @@ DeepSeek (Primary) ────────────────────�
 
 #### Prompt #1: Initial Concept
 
-```
+
 <img width="803" height="241" alt="image" src="https://github.com/user-attachments/assets/4560e43c-6bbe-45a3-a2a0-a89a060856c0" />
-```
+
 <img width="770" height="1039" alt="image" src="https://github.com/user-attachments/assets/6a0ebba0-cad9-4fbe-adde-6c4b5d842fba" />
 
 *My prompt asking Gemini to build the basic extension structure.*
@@ -485,9 +486,9 @@ DeepSeek (Primary) ────────────────────�
 
 #### Prompt #2: Dual-Tab Crossfade
 
-```
+
 <img width="777" height="795" alt="image" src="https://github.com/user-attachments/assets/d3c20117-8003-4df9-9aec-03c98a3ea31d" />
-```
+
 
 *Discussion about opening next song in new tab before current ends.*
 <img width="808" height="532" alt="image" src="https://github.com/user-attachments/assets/e31b8303-008d-4e46-a332-ddc546aa4678" />
@@ -498,9 +499,9 @@ DeepSeek (Primary) ────────────────────�
 
 #### Prompt #3: Volume Problem (Critical)
 
-```
+
 <img width="220" height="214" alt="image" src="https://github.com/user-attachments/assets/e7a01e4d-2823-4e25-a619-164fbf90a90e" />
-```
+
 
 *This was the hardest bug. New tab audio was sometimes silent or very quiet.*
 
@@ -515,9 +516,9 @@ DeepSeek (Primary) ────────────────────�
 
 #### Prompt #4: Heatmap Accuracy
 
-```
+
 <img width="801" height="664" alt="image" src="https://github.com/user-attachments/assets/59892f08-cb5f-4826-9b69-f2f4e45a8f2f" />
-```
+
 
 *The parser was picking tiny noise bumps instead of real chorus peaks.*
 
