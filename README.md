@@ -1,4 +1,4 @@
-# 🎵 YouTube Smart Crossfade
+#  YouTube Smart Crossfade
 
 > A Chrome extension that automatically jumps to song peaks and creates seamless crossfades between tracks — no more silence between songs.
 
@@ -8,7 +8,7 @@
 
 ---
 
-## 📖 Table of Contents
+##  Table of Contents
 
 - [Overview](#-overview)
 - [Features](#-features)
@@ -26,7 +26,7 @@
 
 ---
 
-## 📌 Overview
+##  Overview
 
 **Problem:** YouTube has a 2-5 second silence between songs, long intros before the beat drops, and no smooth transition between tracks.
 
@@ -39,20 +39,23 @@
 
 ---
 
-## ✨ Features
+##  Features
 
 | Feature | Description |
 |---------|-------------|
-| 🔥 **Heatmap Peak Detection** | Parses YouTube's SVG heatmap to find the first major peak within first 15% of video |
-| 🎚️ **Smooth Crossfade** | Configurable fade in/out (500ms - 16000ms) |
-| 📑 **Dual-Tab Mode** | Opens next song in new tab before current ends — zero gap |
-| 🛡️ **Volume Guard** | Prevents YouTube from overriding fade-in volume |
-| ⚙️ **Full UI Controls** | 12 adjustable parameters with persistent storage |
-| 🔍 **Smart Next Detection** | Multiple fallback methods to find next song |
+|  **Heatmap Peak Detection** | Parses YouTube's SVG heatmap to find the first major peak within first 15% of video |
+|  **Smooth Crossfade** | Configurable fade in/out (500ms - 16000ms) |
+|  **Dual-Tab Mode** | Opens next song in new tab before current ends — zero gap |
+|  **Volume Guard** | Prevents YouTube from overriding fade-in volume |
+|  **Full UI Controls** | 12 adjustable parameters with persistent storage |
+|  **Smart Next Detection** | Multiple fallback methods to find next song |
 
 ---
 
-## 🖼️ Demo & Screenshots
+##  Demo & Screenshots
+
+*Demo link：https://youtu.be/IlCQ0bNwm-g*
+
 
 ### UI Panel (Y Button)
 <img width="348" height="104" alt="image" src="https://github.com/user-attachments/assets/d3d6579a-2082-48ef-bd2c-45241b1cc39b" />
@@ -63,9 +66,9 @@
 ---
 
 ### Settings Panel
-<img width="420" height="729" alt="image" src="https://github.com/user-attachments/assets/9fdf946a-2f0e-4cf8-8bfc-61ec96512a47" />
+<img width="425" height="704" alt="image" src="https://github.com/user-attachments/assets/3dcaa007-2432-445c-82ca-456b16df9810" />
 
-*Caption: All 12 settings organized into Core, Mode, Jump, and Fade sections.*
+*Caption: settings organized into Core, Mode, Jump, and Fade sections.*
 
 ---
 
@@ -98,7 +101,7 @@
 
 ---
 
-## 📋 Requirements Analysis
+##  Requirements Analysis
 
 ### Problem Statement
 
@@ -138,17 +141,17 @@ YouTube's default playback has four major issues for continuous music listening:
 
 ---
 
-## 🔧 Feasibility Analysis
+##  Feasibility Analysis
 
 ### Technical Assessment
 
 | Aspect | Assessment |
 |--------|------------|
-| Chrome Extension API | ✅ Mature, well-documented Manifest V3 |
-| YouTube DOM Access | ✅ Content scripts can access/modify |
-| Volume Control | ✅ HTML5 Video API supports `.volume` |
-| Heatmap Parsing | ✅ SVG path data parseable with regex |
-| Cross-tab Communication | ✅ Chrome messaging API available |
+| Chrome Extension API |  Mature, well-documented Manifest V3 |
+| YouTube DOM Access |  Content scripts can access/modify |
+| Volume Control |  HTML5 Video API supports `.volume` |
+| Heatmap Parsing |  SVG path data parseable with regex |
+| Cross-tab Communication |  Chrome messaging API available |
 
 **Conclusion:** All required technologies are available and feasible.
 
@@ -175,7 +178,7 @@ YouTube's default playback has four major issues for continuous music listening:
 
 ---
 
-## 🏗️ System Design
+## System Design
 
 ### Architecture Overview
 
