@@ -363,35 +363,7 @@ function getNextUrl() {
 | **Technical Consultant** | Gemini | Architecture validation, solving stuck problems, API expertise | Latest API knowledge, Chrome extension expertise, diagnostic thinking |
 | **Product Owner & Integrator** | Me (Human) | Creative direction, design decisions, testing, feedback, final integration | Understanding real user needs, testing on actual YouTube videos, making trade-offs, knowing when to switch between AI tools |
 
-### Why Three "Team Members"?
 
-This project used a **human-in-the-loop multi-AI workflow**:
-
-```
-                    ┌─────────────────────────────────────────────────────────┐
-                    │                    HUMAN (Me)                           │
-                    │  - Creative vision: "jump to first peak, not global max"│
-                    │  - Design decisions: dual-tab vs normal mode            │
-                    │  - Testing: 20+ real YouTube videos                     │
-                    │  - Quality control: when to accept/reject AI output     │
-                    │  - Tool orchestration: when to call DeepSeek vs Gemini  │
-                    └─────────────────────────┬───────────────────────────────┘
-                                              │
-                    ┌─────────────────────────┼───────────────────────────────┐
-                    │                         │                               │
-                    ▼                         ▼                               ▼
-          ┌─────────────────┐       ┌─────────────────┐       ┌─────────────────┐
-          │    DeepSeek     │       │     Gemini      │       │     Human       │
-          │   (Primary)     │       │  (Consultant)   │       │  (Integrator)   │
-          ├─────────────────┤       ├─────────────────┤       ├─────────────────┤
-          │ • Writes code   │       │ • Analyzes      │       │ • Provides      │
-          │ • 14 iterations │       │   root cause    │       │   requirements  │
-          │ • Full context  │       │ • Suggests      │       │ • Tests on real │
-          │ • Complete      │       │   architecture  │       │   YouTube       │
-          │   solutions     │       │ • Latest API    │       │ • Gives         │
-          │                 │       │   knowledge     │       │   feedback      │
-          └─────────────────┘       └─────────────────┘       └─────────────────┘
-```
 
 ### My Role: Human-in-the-Loop
 
